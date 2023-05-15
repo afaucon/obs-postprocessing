@@ -11,10 +11,35 @@ The goal of this project is, from a single file that describes a meeting video r
     - mkvmerge v65.0.0
     - mkv files
 
+### Installation
+
+- Clone the source repository.
+- Create a `viddusting` file in a folder that is configured in your `$PATH` environment variable with: 
+
+```bash
+#!/bin/bash
+
+python3 ~/path/to/your/cloned/repo/main.py "$@"
+```
+
+- Make the file executable.
+
 ## Usage
 
+Refer to `viddusting --help`.
+
+- In short, with implicit dusting rules:
+
 ```
-python main.py dusting-rules myvideo.mkv
+viddusting myvideo.mkv
+```
+
+*Note: To use implicit dusting rules, a dusting rules file must exist with the same name as the video file, but with '.vdr' as extension.*
+
+- With explicit dusting rules:
+
+```
+viddusting -r dusting-rules myvideo.mkv
 ```
 
 ## Limitations
